@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>new</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<form method="post" th:action="@{/entreprise/add}">
+
+<p>Raison sociale: <input type="text" name="raison_Sociale" class="form-control" required></p>
+<p>Adresse: <input type="text" name="adresse" class="form-control" required></p>
+<p>Tel: <input type="number" name="tel" class="form-control" required></p>
+
+<p> <input type="submit" value="send" class="btn btn-primary"></p>
+</form>
+</body>
+</html>

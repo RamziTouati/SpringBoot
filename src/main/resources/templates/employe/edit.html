@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit employe</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<form method="post" th:action="@{/employe/update}">
+
+<input type="hidden" name="matricule" th:value="${employe.matricule}">
+<p>nom: <input type="text" name="nom" class="form-control" required  th:value="${employe.nom}"></p>
+<p>prenom: <input type="text" name="prenom" class="form-control" required th:value="${employe.prenom}"></p>
+<p>qualite: <input type="text" name="qualite" class="form-control" required th:value="${employe.qualite}"></p>
+<p>Entreprise: 
+	<select name="entrep" class="form-control">
+		<option th:each="ent :${entreprises}" th:value="${ent.id}" th:text="${ent.raison_Sociale}" th:selected="${ent.id == employe.entrep.id}"></option>
+	
+	</select>
+</p>
+
+<p> <input type="submit" value="send" class="btn btn-primary"></p>
+</form>
+</body>
+</html>

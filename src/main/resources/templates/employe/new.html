@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>new</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body class="container">
+<form method="post" th:action="@{/employe/add}">
+
+<p>Nom: <input type="text" name="nom" class="form-control" required></p>
+<p>Prenom: <input type="text" name="prenom" class="form-control" required></p>
+<p>Qualite: <input type="text" name="qualite" class="form-control" required></p>
+<p>Entreprise: 
+	<select name="entrep" class="form-control">
+		<option th:each="ent :${entreprises}" th:value="${ent.id}" th:text="${ent.raison_Sociale}"></option>
+	
+	</select>
+</p>
+<p> <input type="submit" value="send" class="btn btn-primary"></p>
+</form>
+</body>
+</html>
